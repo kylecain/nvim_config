@@ -13,7 +13,21 @@ require('mason-lspconfig').setup({
   handlers = {
     lsp_zero.default_setup,
   },
-  ensure_installed = { 'gopls' },
+  ensure_installed = { 'gopls', 'templ' },
+})
+
+local lspconfig = require('lspconfig')
+
+lspconfig.html.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "html", "templ" },
+})
+
+lspconfig.htmx.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "html", "templ" },
 })
 
 local cmp = require('cmp')
