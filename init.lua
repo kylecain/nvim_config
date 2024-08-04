@@ -1,4 +1,4 @@
-require("kyle")
+require("config")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -15,9 +15,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
-		"folke/tokyonight.nvim",
+		"no-clown-fiesta/no-clown-fiesta.nvim",
 		lazy = false,
 		priority = 1000,
+		transparent = false,
 		opts = {},
 	},
 	{
